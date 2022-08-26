@@ -1,0 +1,23 @@
+{% extends "ticketSales/layout.html" %}
+
+{% block titlepage %}
+    لیست محل های برگزاری
+{% endblock%}
+
+{% block mainContent %}
+    {% if locationlist %}
+        {% for location in locationlist %}
+            <div class="col-md-2">
+                <a>
+                    {{ location.Name  }}
+                    {{ location.Address  }}
+                    {{ location.Phone  }}
+
+                    <p>ظرفیت : {{ location.Capacity  }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock%}
+

@@ -1,0 +1,26 @@
+{% extends "ticketSales/layout.html" %}
+
+{% block titlepage %}
+پروفایل
+{% endblock%}
+
+{% block mainContent %}
+
+    <div class="row" style="margin-top: 20px;">
+    <div class="col-md-8">
+        <div>
+        <p class="border"><span class="title"> نام و نام خاوادگیی {{ profile.user.get_full_name }}</span> </p>
+        <p class="border"> <span class="title"> جنسیت: {{ profile.get_Gender_display }}</span> </p>
+        <p class="border"> <span class="title"> مقدار اعتبار:{{ profile.Credit }}</span> </p>
+            <ul class="btnul">
+                <li><a class="btn btn-primary" href="/accounts/Edit">ویرایش پروفایل</a> </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-4" dir="ltr">
+        <img src="{{ profile.ProfileImage.url }}" style="width:300px;height:400px;">
+    </div>
+    </div>
+{% endblock %}
+
+
